@@ -1,0 +1,74 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{graphs,graphdrawing}
+\usepackage{caption}
+\usepackage[smartEllipses]{markdown}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,      
+	urlcolor=blue,
+}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{lipsum}
+\usepackage{tkz-graph}
+\usegdlibrary{trees}
+\usepackage{amsmath, amssymb}
+\usepackage{pst-node}
+\usepackage{blkarray}
+\usepackage{amsmath, amssymb}
+\usepackage{pst-node}
+
+\usepackage[margin=2cm]{geometry}
+
+\usepackage[utf8]{inputenc}
+\begin{document}
+	{Michele Beccari 856608 - BioInformatica -  Progetto spaced seeds - Giugno 2023} 
+	
+	\section{Progetto Spaced Seeds}
+
+Lo scopo del progetto è individuare uno SNP o un singolo errore su una read $r$ rispetto al reference $R$.
+
+\begin{itemize}
+	\item \textbf{INPUT}: due sequenze $r$ e $R$
+	\item \textbf{OUTPUT}: la posizione (se esiste) in $r$ di uno SNP oppure di un errore, ovvero la posizione in cui $r$ differisce per una sottostringa $r'$ da $R$ da cui $r$ può essere derivata. 
+\end{itemize}
+
+\begin{mdframed}[hidealllines=true,backgroundcolor=blue!20]
+Esempio: dato $R$ =AAAAAGGGG e $r$=AACGG, chiaramente $r$ differisce in posizione 3 da $r'$ = AAGGG a causa dello SNP C che sostituisce G.
+\end{mdframed} 
+
+\subsection{Metodo proposto}
+Una possibile soluzione è utilizzare gli \textbf{spaced seeds}
+
+\begin{mdframed}[hidealllines=true,backgroundcolor=blue!20]
+Uno spaced seed consiste in un k-mer dove alcune posizioni sono indicate come * che sta per “do not care”.
+\end{mdframed} 
+
+Ad esempio il k-mer AA*GG indica che al posti di * possiamo mettere qualunque simbolo.
+
+Uno spaced seed può matchare diversi k-meri di R. \\
+Ad esempio AA*GG matcha AAAGG oppure AAGGG.
+
+\begin{mdframed}[hidealllines=true,backgroundcolor=blue!20]
+Definiamo un k-mer 1-approssimato se solo una posizione del k-mer è *.
+\end{mdframed}
+
+Abbiamo diversi k-mer 1-approsimati per le varie posizioni da 1 a k.
+
+
+\subsection{Implementazione}
+
+Utilizzando  \href{https://github.com/bcgsc/ntHash}{ntHash2} è possibile indicizzare la stringa R con k-mer 1-approssimati, distinguendo l'hashing per * in posizione $1,2,3...k$
+
+
+Ipotizzando che per ogni posizione $i$ di $r$ ci sia uno SNP o un errore si può utilizzare il risultato precedente per capire se saltando una determinata posiziione $i$ di $r$ si ottiene un match con i k-mers memorizzati per R.
+
+
+\end{document}
+
+
+
