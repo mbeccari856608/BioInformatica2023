@@ -6,7 +6,8 @@ include_dirs = [
 
 sources = [
     'src/main.cpp',
-    'src/seeds.cpp']
+    'src/seeds.cpp',
+    'src/HashInfo.cpp']
 
 ntHash_proj = subproject('ntHash')
 nthash_lib = ntHash_proj.get_variable('nthash_lib')
