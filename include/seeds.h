@@ -11,11 +11,11 @@ namespace Seeds {
  * 
  * @example se \p n = 3 si otterrà un vettore con quattro stringhe:
  * 
- * "000", "001" "010", "100"
+ * "110", "011" "010"
  * 
  * 
  */
-std::vector<std::string> GetSeeds(int n);
+std::vector<std::string> GetSeeds(size_t n);
 
 }
 #endif

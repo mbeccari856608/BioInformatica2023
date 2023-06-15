@@ -3,16 +3,20 @@
 #include <bitset>
 #include "seeds.h"
 
-std::vector<std::string> Seeds::GetSeeds(int n)
+std::vector<std::string> Seeds::GetSeeds(size_t n)
 {
-    std::vector<std::string> seeds;
+    std::vector<std::string> result;
 
-    int limite = 1 << n; // Calcola 2^n come shift a sinistra di n posizioni
+    std::string baseString(n, '1');
 
-    for (int i = 1; i < limite; i <<= 1)
+
+    for (size_t i = 0; i < n; i++)
     {
-        seeds.push_back(std::bitset<32>(i).to_string().substr(32 - n));
+        std::string current = baseString;
+        current[i] = '0';
+        result.push_back(current);
     }
 
-    return seeds;
+
+    return result;
 }
