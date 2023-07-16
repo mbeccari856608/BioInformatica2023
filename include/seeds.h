@@ -11,7 +11,7 @@ namespace Seeds {
  * 
  * @example se \p n = 3 si otterrà un vettore con quattro stringhe:
  * 
- * "110", "011" "010"
+ * "110", "011" "101"
  * 
  * 
  */

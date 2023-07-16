@@ -11,11 +11,13 @@ int main(int argc, char **argv)
   std::string mainSequence = "AAAAAGGGG";
   std::string otherSequence = "AACGG";
 
+  size_t otherSequenceLength = otherSequence.length();
+
   // Calcolo i possibili spaced-seeds per la sequenza r
-  std::vector<std::string> seeds = Seeds::GetSeeds(otherSequence.length());
+  std::vector<std::string> seeds = Seeds::GetSeeds(otherSequenceLength);
 
   std::vector<uint64_t> otherSequenceHashesList;
-  nthash::SeedNtHash otherSequenceHashesGenerator(otherSequence, seeds, 1, otherSequence.length());
+  nthash::SeedNtHash otherSequenceHashesGenerator(otherSequence, seeds, 1, otherSequenceLength);
 
   while (otherSequenceHashesGenerator.roll())
   {
@@ -44,11 +46,18 @@ int main(int argc, char **argv)
 
       if (iterator != otherSequenceHashesList.end())
       {
-        std::cout << "Trovato match in posizione " << mainSequenceHashesGenerator.get_pos() << "\n";
-      }
-      else
-      {
-        std::cout << "Match non trovato in posizione " << mainSequenceHashesGenerator.get_pos() << "\n";
+        size_t matchPos = mainSequenceHashesGenerator.get_pos();
+        std::cout << "Trovato match in posizione " << matchPos << "\n";
+
+        std::string original = mainSequence.substr(matchPos, otherSequenceLength);
+        std::cout << "Sottostringa originale: " << original << "\n";
+
+        std::cout << "Sottostringa alternativa " << otherSequence << "\n";
+
+        std::string snipPos = otherSequence.substr(i, 1);
+
+        std::cout << "La sottostringa alternativa differisce in posizione " << i << " per il carattere " << snipPos << "\n";
+
       }
     }
   }
