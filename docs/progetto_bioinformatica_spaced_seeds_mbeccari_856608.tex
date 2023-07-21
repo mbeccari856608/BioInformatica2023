@@ -33,12 +33,13 @@
 Lo scopo del progetto è individuare uno SNP o un singolo errore su una read $r$ rispetto al reference $R$.
 
 \begin{itemize}
-	\item \textbf{INPUT}: due sequenze $r$ e $R$
+	\item \textbf{INPUT}: due sequenze $r$ e $R$.
+	$r$ differisce di uno SNP o errore da una sottostringa di R, cioe $\exists \; r'$ sottostringa di $r$ tale che $hamming(r, r')$ = 1
 	\item \textbf{OUTPUT}: la posizione (se esiste) in $r$ di uno SNP oppure di un errore, ovvero la posizione in cui $r$ differisce per una sottostringa $r'$ da $R$ da cui $r$ può essere derivata. 
 \end{itemize}
 
 \begin{mdframed}[hidealllines=true,backgroundcolor=blue!20]
-Esempio: dato $R$ =AAAAAGGGG e $r$=AACGG, chiaramente $r$ differisce in posizione 3 da $r'$ = AAGGG a causa dello SNP C che sostituisce G.
+Esempio: dato $R$ =AAAAATCGG e $r$=ATAGG, chiaramente $r$ differisce in posizione 2 da $r'$ = ATCGG a causa dello SNP C che sostituisce A.
 \end{mdframed} 
 
 \subsection{Metodo proposto}
@@ -59,13 +60,19 @@ Definiamo un k-mer 1-approssimato se solo una posizione del k-mer è *.
 
 Abbiamo diversi k-mer 1-approsimati per le varie posizioni da 1 a k.
 
+Ipotizzando che per ogni posizione $i$ di $r$ ci sia uno SNP si può capire se saltando una determinata posizione $i$ di $r$ si ottiene un match con i k-mers memorizzati per R.
 
 \subsection{Implementazione}
 
 Utilizzando  \href{https://github.com/bcgsc/ntHash}{ntHash2} è possibile indicizzare la stringa R con k-mer 1-approssimati, distinguendo l'hashing per * in posizione $1,2,3...k$
 
 
-Ipotizzando che per ogni posizione $i$ di $r$ ci sia uno SNP o un errore si può utilizzare il risultato precedente per capire se saltando una determinata posizione $i$ di $r$ si ottiene un match con i k-mers memorizzati per R.
+L'idea è quella di:
+
+\begin{enumerate} 
+ \item	Ottenere tutti k-mer 1-approssimati della stringa $r$.
+ \item  Per ogni k-mer 1-approssimato nella stringa $R$ eseguire un confronto con i k-mer 1-approssimati trovati al punto 1.
+\end{enumerate}
 
 
 \end{document}

@@ -8,8 +8,8 @@
 
 int main(int argc, char **argv)
 {
-  std::string mainSequence = "AAAAAGGGG";
-  std::string otherSequence = "AACGG";
+  std::string mainSequence = "AAAAATCGG";
+  std::string otherSequence = "ATAGG";
 
   size_t otherSequenceLength = otherSequence.length();
 
@@ -35,7 +35,6 @@ int main(int argc, char **argv)
 
   while (mainSequenceHashesGenerator.roll())
   {
-
     for (size_t i = 0; i < seeds.size(); i++)
     {
       uint64_t hash = mainSequenceHashesGenerator.hashes()[i];
