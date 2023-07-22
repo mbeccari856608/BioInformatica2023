@@ -21,6 +21,15 @@
 \usepackage{blkarray}
 \usepackage{amsmath, amssymb}
 \usepackage{pst-node}
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{language=C++,
+	basicstyle=\ttfamily,
+	keywordstyle=\color{blue}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	commentstyle=\color{green}\ttfamily,
+	morecomment=[l][\color{magenta}]{\#}
+}
 
 \usepackage[margin=2cm]{geometry}
 
@@ -72,7 +81,24 @@ L'idea è quella di:
 \begin{enumerate} 
  \item	Ottenere tutti k-mer 1-approssimati della stringa $r$.
  \item  Per ogni k-mer 1-approssimato nella stringa $R$ eseguire un confronto con i k-mer 1-approssimati trovati al punto 1.
+ \item Quando eventualmente si trova una match, verificare il carattere corrispondente alla posizione dell' "*" nella stringa $r$ per trovare lo SNP.
 \end{enumerate}
+
+Per generare gli hash dei k-mer 1-approssimati la libreria offre degli oggetti appositi:
+
+\begin{lstlisting}
+	   // Oggetto che genera un hash
+	   // per i k-meri di lunghezza 5 della  stringa "ATAGG", utilizzando
+	   // i seed forniti.
+	   // Gli hash sono degli interi senza segno a 64 bit
+	   nthash::SeedNtHash("ATAGG", seeds, 1, 5)
+\end{lstlisting}
+
+Per generare gli hash con un "*" in una determinata posizione è necessario fornire all'oggetto della libreria uno o più \textit{seed},  ovvero una stringa composta da 0 e 1 dove gli 0 rappresentano gli asterischi.
+
+Potenzialmente è possibile generare anche più di un hash per ogni sequenza per gestire eventuali conflitti.
+
+
 
 
 \end{document}
