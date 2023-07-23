@@ -1,0 +1,3 @@
+\beamer@sectionintoc {1}{Text Examples}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Paragraphs and Lists}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Blocks}{5}{0}{1}

@@ -1,0 +1,277 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 2.0 (March 8, 2022)
+%
+% This template originates from:
+% https://www.LaTeXTemplates.com
+%
+% Author:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[
+	11pt, % Set the default font size, options include: 8pt, 9pt, 10pt, 11pt, 12pt, 14pt, 17pt, 20pt
+	%t, % Uncomment to vertically align all slide content to the top of the slide, rather than the default centered
+	%aspectratio=169, % Uncomment to set the aspect ratio to a 16:9 ratio which matches the aspect ratio of 1080p and 4K screens and projectors
+]{beamer}
+
+\graphicspath{{Images/}{./}} % Specifies where to look for included images (trailing slash required)
+
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule for better rules in tables
+
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{language=C++,
+	basicstyle=\ttfamily,
+	keywordstyle=\color{blue}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	commentstyle=\color{green}\ttfamily,
+	morecomment=[l][\color{magenta}]{\#}
+}
+
+%----------------------------------------------------------------------------------------
+%	SELECT LAYOUT THEME
+%----------------------------------------------------------------------------------------
+
+% Beamer comes with a number of default layout themes which change the colors and layouts of slides. Below is a list of all themes available, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+%----------------------------------------------------------------------------------------
+%	SELECT COLOR THEME
+%----------------------------------------------------------------------------------------
+
+% Beamer comes with a number of color themes that can be applied to any layout theme to change its colors. Uncomment each of these in turn to see how they change the colors of your selected layout theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{monarca}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{spruce}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%----------------------------------------------------------------------------------------
+%	SELECT FONT THEME & FONTS
+%----------------------------------------------------------------------------------------
+
+% Beamer comes with several font themes to easily change the fonts used in various parts of the presentation. Review the comments beside each one to decide if you would like to use it. Note that additional options can be specified for several of these font themes, consult the beamer documentation for more information.
+
+\usefonttheme{default} % Typeset using the default sans serif font
+%\usefonttheme{serif} % Typeset using the default serif font (make sure a sans font isn't being set as the default font if you use this option!)
+%\usefonttheme{structurebold} % Typeset important structure text (titles, headlines, footlines, sidebar, etc) in bold
+%\usefonttheme{structureitalicserif} % Typeset important structure text (titles, headlines, footlines, sidebar, etc) in italic serif
+%\usefonttheme{structuresmallcapsserif} % Typeset important structure text (titles, headlines, footlines, sidebar, etc) in small caps serif
+
+%------------------------------------------------
+
+%\usepackage{mathptmx} % Use the Times font for serif text
+\usepackage{palatino} % Use the Palatino font for serif text
+
+%\usepackage{helvet} % Use the Helvetica font for sans serif text
+\usepackage[default]{opensans} % Use the Open Sans font for sans serif text
+%\usepackage[default]{FiraSans} % Use the Fira Sans font for sans serif text
+%\usepackage[default]{lato} % Use the Lato font for sans serif text
+
+%----------------------------------------------------------------------------------------
+%	SELECT INNER THEME
+%----------------------------------------------------------------------------------------
+
+% Inner themes change the styling of internal slide elements, for example: bullet points, blocks, bibliography entries, title pages, theorems, etc. Uncomment each theme in turn to see what changes it makes to your presentation.
+
+%\useinnertheme{default}
+\useinnertheme{circles}
+%\useinnertheme{rectangles}
+%\useinnertheme{rounded}
+%\useinnertheme{inmargin}
+
+%----------------------------------------------------------------------------------------
+%	SELECT OUTER THEME
+%----------------------------------------------------------------------------------------
+
+% Outer themes change the overall layout of slides, such as: header and footer lines, sidebars and slide titles. Uncomment each theme in turn to see what changes it makes to your presentation.
+
+%\useoutertheme{default}
+%\useoutertheme{infolines}
+%\useoutertheme{miniframes}
+%\useoutertheme{smoothbars}
+%\useoutertheme{sidebar}
+%\useoutertheme{split}
+%\useoutertheme{shadow}
+%\useoutertheme{tree}
+%\useoutertheme{smoothtree}
+
+%\setbeamertemplate{footline} % Uncomment this line to remove the footer line in all slides
+%\setbeamertemplate{footline}[page number] % Uncomment this line to replace the footer line in all slides with a simple slide count
+
+%\setbeamertemplate{navigation symbols}{} % Uncomment this line to remove the navigation symbols from the bottom of all slides
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title[Spaced seeds]{Spaced seeds} % The short title in the optional parameter appears at the bottom of every slide, the full title in the main parameter is only on the title page
+
+
+
+\author{Michele Beccari 856608} % Presenter name(s), the optional parameter can contain a shortened version to appear on the bottom of every slide, while the main parameter will appear on the title slide
+
+\institute[]{Corso di Bioinformatica} % Your institution, the optional parameter can be used for the institution shorthand and will appear on the bottom of every slide after author names, while the required parameter is used on the title slide and can include your email address or additional information on separate lines
+
+\date[2023]{2023} % Presentation date or conference/meeting name, the optional parameter can contain a shortened version to appear on the bottom of every slide, while the required parameter value is output to the title slide
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE SLIDE
+%----------------------------------------------------------------------------------------
+
+\begin{frame}
+	\titlepage % Output the title slide, automatically created using the text entered in the PRESENTATION INFORMATION block above
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS SLIDE
+%----------------------------------------------------------------------------------------
+
+% The table of contents outputs the sections and subsections that appear in your presentation, specified with the standard \section and \subsection commands. You may either display all sections and subsections on one slide with \tableofcontents, or display each section at a time on subsequent slides with \tableofcontents[pausesections]. The latter is useful if you want to step through each section and mention what you will discuss.
+
+\begin{frame}
+	\frametitle{Scopo} % Slide title, remove this command for no title
+	
+	Lo scopo del progetto è individuare uno SNP o un singolo errore su una read $r$ rispetto al reference $R$.
+	
+\begin{block}{}
+		\textbf{INPUT}: due sequenze $r$ e $R$.
+		$r$ differisce di uno SNP o errore da una sottostringa di R, cioe $\exists \; r'$ sottostringa di $r$ tale che $hamming(r, r')$ = 1 \\
+		\bigskip
+		\textbf{OUTPUT}: la posizione (se esiste) in $r$ di uno SNP oppure di un errore, ovvero la posizione in cui $r$ differisce per una sottostringa $r'$ da $R$ da cui $r$ può essere derivata. 
+
+\end{block}
+\begin{exampleblock}{Esempio}
+Dato $R$ =AAAAATCGG e $r$=ATAGG, chiaramente $r$ differisce in posizione 2 da $r'$ = ATCGG a causa dello SNP C che sostituisce A.
+\end{exampleblock}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION BODY SLIDES
+%----------------------------------------------------------------------------------------
+
+\section{Text Examples} % Sections are added in order to organize your presentation into discrete blocks, all sections and subsections are automatically output to the table of contents as an overview of the talk but NOT output in the presentation as separate slides
+
+%------------------------------------------------
+
+\subsection{Paragraphs and Lists}
+
+\begin{frame}
+	\frametitle{Spaced seeds}
+	
+	Una possibile soluzione è utilizzare gli \textbf{spaced seeds}
+	
+	\begin{block}{Spaced seed}
+		Uno spaced seed consiste in un k-mer dove alcune posizioni sono indicate come * che sta per “do not care”. \\
+		Definiamo un k-mer 1-approssimato se solo una posizione del k-mer è *.
+	\end{block}
+	
+	\begin{exampleblock}{Esempio}
+		 AA*GG può matchare con  AAAGG e anche con AAGGG.
+	\end{exampleblock}
+	
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+	\frametitle{Spaced seeds}
+	
+	Abbiamo diversi k-mer 1-approssimati per le varie posizioni da 1 a k.
+	
+	Ipotizzando che per ogni posizione $i$ di $r$ ci sia uno SNP si può capire se saltando una determinata posizione $i$ di $r$ si ottiene un k-mer che matcha con uno dei k-mers di $R$.
+	
+\end{frame}
+
+%------------------------------------------------
+
+\subsection{Blocks}
+
+\begin{frame}
+	\frametitle{Implementazione}
+	
+	Utilizzando  \href{https://github.com/bcgsc/ntHash}{ntHash2} è possibile indicizzare la stringa R con k-mer 1-approssimati, distinguendo l'hashing per * in posizione $1,2,3...k$.
+	
+	Per trovare lo SNP gli step saranno quindi:
+\begin{enumerate} 
+	\item	Ottenere tutti k-mer 1-approssimati della stringa $r$.
+	\item  Per ogni k-mer 1-approssimato nella stringa $R$ eseguire un confronto con i k-mer 1-approssimati trovati al punto 1.
+	\item Quando eventualmente si trova una match, verificare il carattere corrispondente alla posizione dell' "*" nella stringa $r$ per trovare lo SNP.
+\end{enumerate}
+	
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}[fragile]
+	Per generare gli hash dei k-mer 1-approssimati la libreria offre degli oggetti appositi:
+	
+\begin{lstlisting}
+// Oggetto che genera un hash
+// per i k-meri di lunghezza 5 della  stringa "ATAGG", utilizzando
+// i seed forniti.
+// Gli hash sono degli interi senza segno a 64 bit
+nthash::SeedNtHash("ATAGG", seeds, 1, 5)
+\end{lstlisting}
+	
+	Per generare gli hash con un "*" in una determinata posizione è necessario fornire all'oggetto della libreria uno o più \textit{seed},  ovvero una stringa composta da 0 e 1 dove gli 0 rappresentano gli asterischi.
+	
+	Potenzialmente è possibile generare anche più di un hash per ogni sequenza per gestire eventuali conflitti.
+	
+\end{frame}
+%------------------------------------------------
+
+\end{document} 

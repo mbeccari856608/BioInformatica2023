@@ -1,0 +1,14 @@
+Per generare gli hash dei k-mer 1-approssimati la libreria offre degli oggetti appositi:
+	
+\begin{lstlisting}
+// Oggetto che genera un hash
+// per i k-meri di lunghezza 5 della  stringa "ATAGG", utilizzando
+// i seed forniti.
+// Gli hash sono degli interi senza segno a 64 bit
+nthash::SeedNtHash("ATAGG", seeds, 1, 5)
+\end{lstlisting}
+	
+	Per generare gli hash con un "*" in una determinata posizione è necessario fornire all'oggetto della libreria uno o più \textit{seed},  ovvero una stringa composta da 0 e 1 dove gli 0 rappresentano gli asterischi.
+	
+	Potenzialmente è possibile generare anche più di un hash per ogni sequenza per gestire eventuali conflitti.
+	

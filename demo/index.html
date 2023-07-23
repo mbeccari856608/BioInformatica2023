@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Caricamento di un file WebAssembly</title>
+    <script src="mbeccariBioinformatica2023emscripten.js"></script>
+</head>
+
+<body>
+    <h1>Caricamento di un file WebAssembly</h1>
+    <button onclick="runWasm()">Esegui WebAssembly</button>
+
+    <script>
+
+        Module.onRuntimeInitialized = () => {
+
+            const Sum = Module.cwrap('GetSeeds', 'number', ['array']);
+            console.log(Sum());
+        };
+
+
+    </script>
+</body>
+
+</html>
