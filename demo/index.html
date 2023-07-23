@@ -12,10 +12,21 @@
 
     <script>
 
+        function toStringArray(stringVector) {
+            let result = [];
+            for (var i = 0; i < stringVector.size(); i++) {
+                result[i] = stringVector.get(i);
+            }
+            
+            return result;
+        }
+
         Module.onRuntimeInitialized = () => {
 
-            const Sum = Module.cwrap('GetSeeds', 'number', ['array']);
-            console.log(Sum());
+            const seeds = Module.GetSeeds(5);
+
+
+            console.log(toStringArray(seeds));
         };
 
 

@@ -1,10 +1,9 @@
 #include "emscripten.h"
+#include "emscripten/bind.h"
+#include "seeds.h"
 
-extern "C"
-{
+EMSCRIPTEN_BINDINGS (mymodule) {
+  emscripten::register_vector<std::string>("StringList");
+  emscripten::function("GetSeeds", &Seeds::GetSeeds);
 
-  int EMSCRIPTEN_KEEPALIVE funzioneMia()
-  {
-    return 1;
-  }
 }

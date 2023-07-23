@@ -4,13 +4,9 @@ include_dirs = [
     include_directories('include')
 ]
 
-sources = [
-    'src/main.cpp',
-    'src/seeds.cpp',
-    'src/HashInfo.cpp']
+sources = [ 'core/seeds.cpp' ]
 
-wasmSources = [
-    'wasm/libSources.cpp']
+wasmSources = ['wasm/libSources.cpp']
 
 ntHash_proj = subproject('ntHash')
 nthash_lib = ntHash_proj.get_variable('nthash_lib')
@@ -24,7 +20,8 @@ if meson.get_compiler('cpp').get_id() == 'emscripten'
         '-s',
         'LINKABLE=1',
         '-s',
-        'EXPORT_ALL=1'
+        'EXPORT_ALL=1',
+        '--bind'
         ]
 else
     extra_args = []
@@ -33,13 +30,13 @@ endif
 
 executable(
     'mbeccariBioinformatica2023',
-    sources,
+    [sources, 'src/main.cpp'],
     link_with  : nthash_lib,
     include_directories: [nthash_include, include_dirs])
 
 executable(
     'mbeccariBioinformatica2023emscripten',
-    wasmSources,
+    [sources, wasmSources],
     cpp_args: extra_args,
     link_args : extra_args,
     link_with  : nthash_lib,
