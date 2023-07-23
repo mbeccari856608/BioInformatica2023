@@ -5,9 +5,10 @@ ar = 'emar.bat'
 
 [built-in options]
 c_args = []
-c_link_args = ['-sEXPORT_ALL=1']
+c_link_args = []
 cpp_args = []
-cpp_link_args = ['-sEXPORT_ALL=1']
+default_library = 'static'
+cpp_link_args = []
 
 [host_machine]
 
