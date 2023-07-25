@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Bio informatica 2023';
+
+  mainString: string = "AAAAATCGG";
+  subString: string = "ATAGG";
+
+
+  ngOnInit(){
+    console.log((<any>window).Module);
+  }
+
+  
 }
+
