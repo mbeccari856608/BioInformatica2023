@@ -4,7 +4,6 @@
 #include <nthash/nthash.hpp>
 #include <sstream>
 
-
 std::vector<std::string> SpacedSeeds(std::string mainSequence, std::string otherSequence)
 {
   std::ostringstream stringStream;
@@ -27,17 +26,17 @@ std::vector<std::string> SpacedSeeds(std::string mainSequence, std::string other
   }
 
   stringStream << "Generati " << otherSequenceHashesList.size() << " hash"
-            << std::endl;
+               << std::endl;
   result.push_back(stringStream.str());
   stringStream.str(std::string());
   stringStream.clear();
-  
 
   nthash::SeedNtHash mainSequenceHashesGenerator(mainSequence, seeds, 1, otherSequence.length());
 
-  while (mainSequenceHashesGenerator.roll())
+  bool isPerfectSubstring = false;
+  while (mainSequenceHashesGenerator.roll() && !isPerfectSubstring)
   {
-    for (size_t i = 0; i < seeds.size(); i++)
+    for (size_t i = 0; i < seeds.size() && !isPerfectSubstring; i++)
     {
       uint64_t hash = mainSequenceHashesGenerator.hashes()[i];
       auto iterator = std::find(
@@ -48,7 +47,7 @@ std::vector<std::string> SpacedSeeds(std::string mainSequence, std::string other
       if (iterator != otherSequenceHashesList.end())
       {
         size_t matchPos = mainSequenceHashesGenerator.get_pos();
-        
+
         stringStream << "Trovato match in posizione " << matchPos << "\n";
         result.push_back(stringStream.str());
         stringStream.str(std::string());
@@ -60,19 +59,30 @@ std::vector<std::string> SpacedSeeds(std::string mainSequence, std::string other
         stringStream.str(std::string());
         stringStream.clear();
 
-
         stringStream << "Sottostringa alternativa: " << otherSequence << "\n";
         result.push_back(stringStream.str());
         stringStream.str(std::string());
         stringStream.clear();
 
         std::string snipPos = otherSequence.substr(i, 1);
+        std::string originalPos = mainSequence.substr(i + matchPos, 1);
 
-        stringStream << "La sottostringa alternativa differisce in posizione " << i << " per il carattere " << snipPos << "\n";
-        result.push_back(stringStream.str());
-        stringStream.str(std::string());
-        stringStream.clear();
-
+        if (snipPos == originalPos)
+        {
+          stringStream << "La stringa r è già una sottostringa di R"
+                       << "\n";
+          result.push_back(stringStream.str());
+          stringStream.str(std::string());
+          stringStream.clear();
+          isPerfectSubstring = true;
+        }
+        else
+        {
+          stringStream << "La sottostringa alternativa differisce in posizione " << i << " per il carattere " << snipPos << "\n";
+          result.push_back(stringStream.str());
+          stringStream.str(std::string());
+          stringStream.clear();
+        }
       }
     }
   }
@@ -80,9 +90,9 @@ std::vector<std::string> SpacedSeeds(std::string mainSequence, std::string other
   return result;
 }
 
-EMSCRIPTEN_BINDINGS (mymodule) {
+EMSCRIPTEN_BINDINGS(mymodule)
+{
   emscripten::register_vector<std::string>("StringList");
   emscripten::function("GetSeeds", &Seeds::GetSeeds);
   emscripten::function("SpacedSeeds", &SpacedSeeds);
-
 }

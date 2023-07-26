@@ -20,7 +20,7 @@
             "outputPath": "dist/demobioinformatica",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "baseHref": "/",
+            "baseHref": "https://mbeccari856608.github.io/BioInformatica2023/",
             "polyfills": [
               "zone.js"
             ],
