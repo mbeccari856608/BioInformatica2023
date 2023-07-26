@@ -28,16 +28,20 @@ else
 endif
 
 
-executable(
-    'mbeccariBioinformatica2023',
-    [sources, 'src/main.cpp'],
-    link_with  : nthash_lib,
-    include_directories: [nthash_include, include_dirs])
+if meson.get_compiler('cpp').get_id() != 'emscripten'
+    executable(
+        'mbeccariBioinformatica2023',
+        [sources, 'src/main.cpp'],
+        link_with  : nthash_lib,
+        include_directories: [nthash_include, include_dirs])
+endif
 
-executable(
-    'mbeccariBioinformatica2023emscripten',
-    [sources, wasmSources],
-    cpp_args: extra_args,
-    link_args : extra_args,
-    link_with  : nthash_lib,
-    include_directories: [nthash_include, include_dirs])
+if meson.get_compiler('cpp').get_id() == 'emscripten'
+    executable(
+        'mbeccariBioinformatica2023emscripten',
+        [sources, wasmSources],
+        cpp_args: extra_args,
+        link_args : extra_args,
+        link_with  : nthash_lib,
+        include_directories: [nthash_include, include_dirs])
+endif
