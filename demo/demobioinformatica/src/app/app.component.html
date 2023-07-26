@@ -22,7 +22,8 @@
             [(ngModel)]="subString"
             class="form-control" id="substringInput" placeholder="Inserisci stringa r">
           </div>
-          <button class="btn btn-primary mb-3" [disabled]="!hasValues"  (click)="calcSpacedSeeds()">Calcola</button>
+          <button class="btn btn-primary mx-2 mb-3" [disabled]="!hasValues"  (click)="calcSpacedSeeds()">Calcola</button>
+          <button class="btn btn-primary mb-3"  (click)="setExampleRString()">Stringa di esempio</button>
       </div>
     </div>
     <div class="row mt-2">

@@ -35,6 +35,11 @@ export class AppComponent {
     return result;
   }
 
+  setExampleRString(){
+    this.subString = "";
+    this.mainString = "TCTATCTCTTTATTGCTTCTTTGGGTAATGCTTTTTTTCCTAAATATTCAGCCAAATATCTAGGCATTGCTGCTTTTCCT";
+  }
+
   
   get hasValues() : boolean {
     return this.mainString != undefined &&
