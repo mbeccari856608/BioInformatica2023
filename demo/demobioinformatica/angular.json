@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/demobioinformatica",
+            "outputPath": "../../docs",
             "index": "src/index.html",
             "main": "src/main.ts",
             "baseHref": "https://mbeccari856608.github.io/BioInformatica2023/",
