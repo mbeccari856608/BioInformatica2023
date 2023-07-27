@@ -1,7 +1,7 @@
-This is LuaHBTeX, Version 1.15.0 (TeX Live 2022)  (format=lualatex 2022.9.24)  27 JUL 2023 02:03
+This is LuaHBTeX, Version 1.15.0 (TeX Live 2022)  (format=lualatex 2022.9.24)  27 JUL 2023 02:27
  restricted system commands enabled.
-**template.tex
-(./template.tex
+**presentazione.tex
+(./presentazione.tex
 LaTeX2e <2022-06-01> patch level 5
 Lua module: luaotfload 2022-06-15 3.22 Lua based OpenType font support
 Lua module: lualibs 2021-05-20 2.74 ConTeXt Lua standard libraries.
@@ -1432,8 +1432,8 @@ guage=dflt;+tlig;+liga;+tnum;+lnum;"
 
 )
 (c:/texlive/2022/texmf-dist/tex/latex/beamer/beamerinnerthemecircles.sty)
-(./template.aux)
-\openout1 = template.aux
+(./presentazione.aux)
+\openout1 = presentazione.aux
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 167.
 LaTeX Font Info:    ... okay on input line 167.
@@ -1519,10 +1519,10 @@ e
 ))
 Package hyperref Info: Link coloring OFF on input line 167.
 
-(./template.out) (./template.out)
+(./presentazione.out) (./presentazione.out)
 \@outlinefile=\write5
 
-\openout5 = template.out
+\openout5 = presentazione.out
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 167.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
@@ -1666,7 +1666,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  TU/lmss/b/n --> TU/lmss/b/n on input line 167.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  TU/lmtt/b/n --> TU/lmtt/b/n on input line 167.
- (./template.nav) [1
+ (./presentazione.nav) [1
 
 {c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
@@ -1701,9 +1701,9 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
 ] [5
 
 ]
-\openout4 = template.vrb
+\openout4 = presentazione.vrb
 
-(./template.vrb
+(./presentazione.vrb
 Overfull \hbox (91.32814pt too wide) in paragraph at lines 6--7
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
@@ -1713,31 +1713,35 @@ Overfull \hbox (91.32814pt too wide) in paragraph at lines 6--7
 ) [6
 
 ]
+\openout4 = presentazione.vrb
+ (./presentazione.vrb) [7
+
+]
 \tf@nav=\write6
 
-\openout6 = template.nav
+\openout6 = presentazione.nav
 \tf@toc=\write7
 
-\openout7 = template.toc
+\openout7 = presentazione.toc
 \tf@snm=\write8
 
-\openout8 = template.snm
- (./template.aux)
-Package rerunfilecheck Info: File `template.out' has not changed.
-(rerunfilecheck)             Checksum: 7F8602D1A52594E646ECB4D41F014AB9;361.
+\openout8 = presentazione.snm
+ (./presentazione.aux)
+Package rerunfilecheck Info: File `presentazione.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 )
 
 Here is how much of LuaTeX's memory you used:
- 27697 strings out of 477356
+ 27698 strings out of 477356
  100000,1144653 words of node,token memory allocated
- 13293 words of node memory still in use:
-   262 hlist, 9 vlist, 35 rule, 38 disc, 10 local_par, 484 glue, 74 kern, 23 pen
-alty, 565 glyph, 318 attribute, 61 glue_spec, 318 attribute_list, 4 write, 156 p
-df_colorstack nodes
-   avail lists: 2:568,3:584,4:460,5:242,6:55,7:2408,8:76,9:846,10:17,11:78
- 47446 multiletter control sequences out of 65536+600000
+ 1713 words of node memory still in use:
+   22 hlist, 9 vlist, 5 rule, 6 disc, 3 local_par, 38 glue, 6 kern, 10 penalty, 
+45 glyph, 50 attribute, 61 glue_spec, 50 attribute_list, 4 write, 1 pdf_start_li
+nk, 1 pdf_end_link, 1 pdf_action, 16 pdf_colorstack nodes
+   avail lists: 2:1104,3:578,4:600,5:310,6:61,7:3374,8:75,9:1116,10:17,11:110
+ 47439 multiletter control sequences out of 65536+600000
  63 fonts using 4327619 bytes
- 128i,15n,115p,449b,716s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,15n,115p,455b,716s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2022/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf><c:/te
 xlive/2022/texmf-dist/fonts/opentype/public/lm/lmsans10-bold.otf><c:/texlive/202
 2/texmf-dist/fonts/opentype/public/lm/lmsans10-oblique.otf><c:/texlive/2022/texm
@@ -1747,10 +1751,10 @@ opentype/public/lm/lmsans12-regular.otf><c:/texlive/2022/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 sy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on template.pdf (6 pages, 76141 bytes).
+Output written on presentazione.pdf (7 pages, 77776 bytes).
 
-PDF statistics: 319 PDF objects out of 1000 (max. 8388607)
- 247 compressed objects within 3 object streams
- 16 named destinations out of 1000 (max. 131072)
- 360 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 334 PDF objects out of 1000 (max. 8388607)
+ 261 compressed objects within 3 object streams
+ 15 named destinations out of 1000 (max. 131072)
+ 336 words of extra memory for PDF output out of 10000 (max. 100000000)
 
