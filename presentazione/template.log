@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.15.0 (TeX Live 2022)  (format=lualatex 2022.9.24)  23 JUL 2023 01:05
+This is LuaHBTeX, Version 1.15.0 (TeX Live 2022)  (format=lualatex 2022.9.24)  27 JUL 2023 02:03
  restricted system commands enabled.
 **template.tex
 (./template.tex
@@ -1704,7 +1704,7 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
 \openout4 = template.vrb
 
 (./template.vrb
-Overfull \hbox (91.32814pt too wide) in paragraph at lines 5--6
+Overfull \hbox (91.32814pt too wide) in paragraph at lines 6--7
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
  
@@ -1730,11 +1730,11 @@ Package rerunfilecheck Info: File `template.out' has not changed.
 Here is how much of LuaTeX's memory you used:
  27697 strings out of 477356
  100000,1144653 words of node,token memory allocated
- 12666 words of node memory still in use:
-   253 hlist, 6 vlist, 32 rule, 35 disc, 8 local_par, 461 glue, 72 kern, 21 pena
-lty, 547 glyph, 294 attribute, 61 glue_spec, 294 attribute_list, 4 write, 144 pd
-f_colorstack nodes
-   avail lists: 2:568,3:586,4:436,5:238,6:51,7:2326,8:76,9:816,10:17,11:72
+ 13293 words of node memory still in use:
+   262 hlist, 9 vlist, 35 rule, 38 disc, 10 local_par, 484 glue, 74 kern, 23 pen
+alty, 565 glyph, 318 attribute, 61 glue_spec, 318 attribute_list, 4 write, 156 p
+df_colorstack nodes
+   avail lists: 2:568,3:584,4:460,5:242,6:55,7:2408,8:76,9:846,10:17,11:78
  47446 multiletter control sequences out of 65536+600000
  63 fonts using 4327619 bytes
  128i,15n,115p,449b,716s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1747,7 +1747,7 @@ opentype/public/lm/lmsans12-regular.otf><c:/texlive/2022/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 sy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on template.pdf (6 pages, 76072 bytes).
+Output written on template.pdf (6 pages, 76141 bytes).
 
 PDF statistics: 319 PDF objects out of 1000 (max. 8388607)
  247 compressed objects within 3 object streams

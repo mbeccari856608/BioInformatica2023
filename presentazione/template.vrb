@@ -1,4 +1,5 @@
-Per generare gli hash dei k-mer 1-approssimati la libreria offre degli oggetti appositi:
+\frametitle{Implementazione}
+	Per generare gli hash dei k-mer 1-approssimati la libreria offre degli oggetti appositi:
 	
 \begin{lstlisting}
 // Oggetto che genera un hash

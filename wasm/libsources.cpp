@@ -33,9 +33,9 @@ std::vector<std::string> SpacedSeeds(std::string mainSequence, std::string other
 
   nthash::SeedNtHash mainSequenceHashesGenerator(mainSequence, seeds, 1, otherSequence.length());
 
-  bool isPerfectSubstring = false;
-  while (mainSequenceHashesGenerator.roll() && !isPerfectSubstring)
+  while (mainSequenceHashesGenerator.roll())
   {
+    bool isPerfectSubstring = false;
     for (size_t i = 0; i < seeds.size() && !isPerfectSubstring; i++)
     {
       uint64_t hash = mainSequenceHashesGenerator.hashes()[i];
@@ -78,7 +78,10 @@ std::vector<std::string> SpacedSeeds(std::string mainSequence, std::string other
         }
         else
         {
-          stringStream << "La sottostringa alternativa differisce in posizione " << i << " per il carattere " << snipPos << "\n";
+          stringStream << "La sottostringa alternativa differisce in posizione " 
+                       << i << " per il carattere " << snipPos
+                       << " che sostituisce il carattere " << originalPos
+                       << "\n";
           result.push_back(stringStream.str());
           stringStream.str(std::string());
           stringStream.clear();
